@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box;
+}
+
+/* General Styling */
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 1s ease-in-out;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: -120px; /* Adjust the bottom margin to increase the space */
+    z-index: 10;
+}
+
+/* Add max-width to the video background to prevent overflow */
+#header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header-content {
+    position: absolute;
+    top: 65%; /* Adjusted for better placement */
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+}
+
+.nav-tabs {
+    position: absolute;
+    top: 85%; /* Adjust position below "Welcome Piggy!" */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    background: rgba(177, 177, 177, 0.459); /* Soft background */
+    padding: 4px 6px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 3;
+    white-space: nowrap;
+}
+
+.nav-tabs a {
+    text-decoration: none;
+    color: #424242;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.719);
+    justify-content: center;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Prevents text from overflowing */
+    min-width: 70px;
+    text-shadow: 2px 2px 4px rgba(82, 82, 82, 0.4); /* Soft shadow effect */
+}
+
+.nav-tabs a:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #6b3e75;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .header-content {
+        top: 65%; /* Moves lower for better visibility on mobile */
+        left: 2%; /* Slightly adjusts to keep it positioned well */
+    }
+
+    .header-content h1 {
+        font-size: 32px; /* Slightly smaller font for mobile */
+    }
+
+    .nav-tabs {
+        bottom: 2%;
+        padding: 6px 8px;
+    }
+
+    .nav-tabs a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+.header-content h1 {
+    font-family: 'Great Vibes', cursive; /* Fancy cursive font */
+    font-size: 40px; /* Bigger size for elegance */
+    font-weight: bold;
+    text-shadow: 
+        3px 3px 5px rgba(0, 0, 0, 0.3), /* Soft shadow */
+        0px 0px 10px rgba(110, 110, 110, 0.7), /* Light pink glow */
+        0px 0px 20px rgba(99, 98, 98, 0.5); /* Stronger pink glow */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Creates space between text & tabs */
+}
+
+.steve-gif {
+    width: 90px; /* Adjust size as needed */
+    height: auto;
+    margin-left: 5px; /* Add spacing */
+    vertical-align: middle; /* Aligns with text */
+    position: relative;
+    top: -8px;
+}
+
+.tab-icon {
+    width: 10px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* 📜 About Earl - Minecraft Styled */
+#about-earl {
+    padding: 20px;
+    margin: 20px auto;
+    background: url('images/minecraft-paper.png'); /* Minecraft book/paper texture */
+    border: 5px solid #8b5a2b; /* Brownish wooden border */
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 🪵 Wooden Sign Title */
+#about-earl h2 {
+    font-family: 'Press Start 2P', sans-serif;
+    background: url('images/minecraft-wood-sign.png'); /* Wooden texture */
+    background-size: cover;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+}
+
+/* 📜 About Earl Text */
+#about-earl p {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #222;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+
+/* 🟢 Hover Effect - Glow */
+#about-earl:hover {
+    transform: scale(1.02);
+    border-color: #57c84d; /* Minecraft green */
+    box-shadow: 0px 0px 10px rgba(87, 200, 77, 0.8);
+}
+
+#favorites {
+    padding: 20px;
+    margin: 20px auto;
+    background: url('images/minecraft-planks.png'); /* Minecraft wooden plank texture */
+    border: 5px solid #5e3c1a; /* Dark brown border like Minecraft UI */
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 🪵 Wooden Sign Title */
+#favorites h2 {
+    font-family: 'Press Start 2P', sans-serif; /* Blocky font */
+    background: url('images/minecraft-wood-sign.png'); /* Wooden sign texture */
+    background-size: cover;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+}
+
+/* 🎨 Favorite Items Grid */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* 🟩 Favorite Item Boxes */
+.fav-item {
+    text-align: center;
+    padding: 12px;
+    background: url('images/minecraft-stone.png'); /* Minecraft stone texture */
+    border: 4px solid #404040;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+/* 🎮 Icons - Slightly larger for impact */
+.fav-item img {
+    width: 60px;
+    height: 60px;
+    image-rendering: pixelated; /* Ensures a pixel-art look */
+}
+
+/* 🟢 Hover Effect - Glow */
+.fav-item:hover {
+    transform: scale(1.1);
+    border-color: #57c84d; /* Minecraft green */
+    box-shadow: 0px 0px 10px rgba(87, 200, 77, 0.8);
+}
+
+/* 🏗️ Blocky Font for Labels */
+.fav-item p {
+    font-family: 'Press Start 2P', sans-serif; /* Minecraft-styled text */
+    color: white;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 896px) {
+    #countdown {
+        width: 100%;
+        max-width: 350px;
+        padding: 10px;
+    }
+
+    #countdown h2 {
+        font-size: 15px;
+    }
+}
+
+/* Fireflies/Hearts Animation */
+#animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para hindi maapektuhan ang UI */
+    z-index: 1; /* Para hindi matakpan ang content */
+    
+}
+
+/* Fireflies/Hearts Animation */
+@keyframes floatFireflies {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Floating Hearts */
+.floating-heart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 253, 253, 0); /* Light pink for hearts */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+    animation: floatHearts 10s infinite ease-in-out;
+}
+
+.floating-heart::before {
+    content: "❤"; /* Heart emoji */
+    font-size: 20px;
+    color: rgba(255, 105, 180, 0.8); /* Pink color */
+}
+
+/* Fireflies */
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 77, 0.925); /* Yellow light */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(250, 250, 72, 0.8);
+    animation: floatFireflies 10s infinite ease-in-out;
+}
+
+/* Random Placement and Animation Delay */
+.firefly:nth-child(n) {
+    top: calc(100% * var(--random-y));
+    left: calc(100% * var(--random-x));
+    animation-duration: calc(2s + var(--random-duration));
+}
+
+.floating-heart:nth-child(n) {
+    top: calc(100% * var(--random-y));
+    left: calc(100% * var(--random-x));
+    animation-duration: calc(3s + var(--random-duration));
+}
+
+/* Add more variation to positions */
+.firefly {
+    --random-x: 0.5;
+    --random-y: 0.5;
+    --random-duration: 2s;
+}
+
+.floating-heart {
+    --random-x: 0.8;
+    --random-y: 0.2;
+    --random-duration: 3s;
+}
+
+/* 🌞 Day Mode - Blue sky with clouds */
+body.daytime {
+    background: linear-gradient(to bottom, #006af5, #02b7ff, #b9dce9), url('images/clouds.png');
+    background-position: center top;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    color: #333;
+    height: 100vh;
+    position: relative;
+}
+
+/* 🌙 Night Mode - Dark blue sky with stars */
+body.nighttime {
+    background: linear-gradient(to bottom, #000000, #040952, #1a1aaa), url('images/clouds.png'); /* Replace with your night sky image */
+    background-position: center top;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100vh;
+    position: relative;
+}
+
+/* 📸 Horizontal Image Gallery - Infinite */
+#photo-gallery {
+    display: flex;
+    justify-content: flex-start; /* Aligns the images to the left */
+    margin-top: -8px; /* Adjust spacing below teddy bears */
+    overflow-x: hidden; /* Prevent overflow of the gallery */
+    white-space: nowrap;
+    width: 100%; /* Ensure the gallery fits the screen size */
+    max-width: 100%;
+}
+
+#photo-gallery img {
+    height: 90px; /* Make it full screen height */
+    overflow: hidden; /* Adjust height as needed */
+    width: auto;
+    flex: 0 0 auto; /* Prevents images from shrinking or stretching */
+    object-fit: cover; /* Ensures images fill the space */
+    max-width: 100%; /* Prevents images from overflowing */
+}
+
+/* Allows the images to fill the space equally without overflow */
+#photo-gallery-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    animation: slide 10s linear infinite; /* Infinite sliding animation */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Scrolls the images infinitely */
+    }
+}
